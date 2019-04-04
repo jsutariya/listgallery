@@ -1,0 +1,51 @@
+<?php
+/**
+ * Display all product gallery images
+ */
+?>
+<?php
+$gallery = $block->getGalleryImages();
+$_product = $block->getProduct();
+$_imageHelper = $this->helper('\Magento\Catalog\Helper\Image');
+$imageCounter = 0;
+$imageLimit = \JS\ListGallery\Helper\Data::GALLERY_IMAGE_LIMIT;
+/* Image Gallery section */
+if (count($gallery) > 1) :
+    ?>
+    <div class="listing-gallery">
+        <div class="product-item-inner">
+            <?php
+            if ($gallery instanceof \Magento\Framework\Data\Collection) :
+                foreach ($gallery as $galleryImage) :
+                    /* Limit Gallery images  */
+                    if ($imageCounter++ >= $imageLimit) :
+                        break;
+                    endif;
+                    $imageUrl = $_imageHelper->init($_product, 'list_gallery_images')
+                        ->setImageFile($galleryImage->getFile())
+                        ->getUrl();
+                    if ($imageUrl) :
+                        ?>
+                        <div class="listing-gallery-image" data-role="list-gallery-container" data-bind="scope: 'listGallery'">
+                            <img src="<?php echo $imageUrl ?>" width="50" height="50" alt="<?php echo $galleryImage->getLabelDefault() ?>" data-main_image_src="<?php echo $galleryImage->getUrl() ?>" data-bind="click: updateImage"/>
+                        </div>
+                    <?php endif;
+                endforeach;
+            endif;
+            ?>
+        </div>
+    </div>
+    <script type="text/x-magento-init">
+        {
+            "[data-role='list-gallery-container']": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "listGallery": {
+                            "component": "JS_ListGallery/js/listgallery"
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<?php endif; ?>
