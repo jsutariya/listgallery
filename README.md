@@ -8,6 +8,17 @@ List Gallery module will add product gallery images on product list. It will be 
 - Search Result Page
 - Advanced Search Result Page
 
+### Installation:
+Install using composer:
+
+`composer require jsutariya/listgallery`
+
+`php bin/magento module:enable JS_ListGallery`
+
+`php bin/magento setup:upgrade`
+
+`php bin/magento cache:flush`
+
 ## Manual
 
 Go to Stores > Configuration > JS > Image Gallery List > Enable to enable/disable gallery image functionality on frontend.
