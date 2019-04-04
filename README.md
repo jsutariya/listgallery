@@ -11,3 +11,6 @@ List Gallery module will add product gallery images on product list. It will be 
 ## Manual
 
 Go to Stores > Configuration > JS > Image Gallery List > Enable to enable/disable gallery image functionality on frontend.
+
+## Frontend:
+<img src="https://jsutariya.files.wordpress.com/2019/04/listgallery.png" />
