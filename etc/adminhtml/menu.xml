@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="JS_ListGallery::listgallery" title="List Gallery" module="JS_ListGallery" sortOrder="10" resource="JS_ListGallery::listgallery" parent="JS_General::jsutariya" />
+
+        <add id="JS_ListGallery::settings" title="Settings" module="JS_ListGallery"
+             sortOrder="40" action="adminhtml/system_config/edit/section/list_gallery"
+             resource="JS_ListGallery::settings" parent="JS_ListGallery::listgallery"/>
+    </menu>
+</config>

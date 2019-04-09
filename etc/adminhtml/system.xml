@@ -1,9 +1,6 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="jsutariya" translate="label" sortOrder="300">
-            <label>JS</label>
-        </tab>
         <section id="list_gallery" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label">
             <label>Image Gallery List</label>
             <tab>jsutariya</tab>

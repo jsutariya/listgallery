@@ -3,6 +3,11 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
+                <resource id="JS_General::jsutariya" title="JSutariya" sortOrder="20">
+                    <resource id="JS_ListGallery::listgallery" title="List Gallery" translate="title" sortOrder="10">
+                        <resource id="JS_ListGallery::settings"  title="Settings" translate="title" sortOrder="40" />
+                    </resource>
+                </resource>
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
